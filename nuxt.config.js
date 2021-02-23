@@ -45,6 +45,9 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    command: 'npm run build',
+    commandOrigin: 'ui',
+    publish: '/opt/build/repo/dist'
   },
   router: {
     extendRoutes( routes ) {
