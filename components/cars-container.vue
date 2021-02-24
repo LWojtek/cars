@@ -1,9 +1,7 @@
 <template>
-  <div class="container list__container" >
-    <cars-item v-for="car in carsData" :key="car.id" :carSection="car" />
+  <div class="container list__container">
+    <cars-item v-for="car in carsData" :key="car.id" :carSection="car"/>
   </div>
-
-
 </template>
 
 <script>
@@ -11,6 +9,11 @@ import { mapState } from 'vuex';
 
 export default {
       name: 'list',
+      data(){
+        return {
+          id: this.$route.params.carId,
+        }
+      },
   computed: {
     ...mapState([
       'carsData',

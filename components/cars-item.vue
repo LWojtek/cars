@@ -1,7 +1,7 @@
 <template>
 
   <div>
-  <div class="list__item">
+  <div class="list__item" v-if="carSection.id !== this.id">
       <div class="item__image">
         <nuxt-link :to="`/cars/${carSection.id}`">
           <img class="image" :src="`${ carSection.images.thumbnail[0] }`" alt="">
@@ -45,6 +45,11 @@ import { mapState } from 'vuex';
 
 export default {
   name: 'cars-item',
+  data(){
+    return {
+      id: this.$route.params.carId
+    }
+  },
   props: ['carSection'],
   computed: {
     ...mapState([
