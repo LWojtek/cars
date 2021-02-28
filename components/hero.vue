@@ -23,6 +23,17 @@
   @media screen and(max-width:1920px) {
     background: url(@/static/heroimg.jpg) center center no-repeat;
   }
+
+  @media screen and(max-width:500px) {
+    background: url(@/static/heroimg_mobile.jpg) center center no-repeat;
+    height: 80vh;
+  }
+
+  @media screen and(max-width:1024px) {
+    background: url(@/static/heroimg_table.jpg) center center no-repeat;
+  }
+
+
 }
 
 .hero::after {

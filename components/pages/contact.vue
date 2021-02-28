@@ -48,7 +48,15 @@
 
 .contact__wrapper {
   display: flex;
-  padding: 50px 0;
+    padding: 50px 0;
+    align-items: stretch;
+
+
+        @media screen and(max-width: 1024px){
+         flex-direction: column;
+        }
+
+
 }
 
 i {
@@ -67,11 +75,23 @@ i {
   flex-basis: 45%;
   margin-right: 4%;
   margin-left: 1%;
+
+
+
+        @media screen and(max-width: 1024px){
+          margin: 0 0 30px;
+        }
+
 }
+
+// .contact__map {
+//   height: 724px;
+//   }
 
 .contact__card {
   text-align: center;
   width: 100%;
+  height: 100%;
     box-shadow: 0 0 7px 2px rgb(207, 207, 207);
     padding: 10px;
 }
@@ -85,12 +105,18 @@ i {
   margin-left: 4%;
   margin-right: 1%;
   padding: 0 25px;
+
+       @media screen and(max-width: 1024px){
+          margin: 0;
+          padding: 0;
+        }
 }
 
   fieldset {
     border: none;
     padding: 40px 40px 10px;
     box-shadow: 0 0 7px 2px rgb(207, 207, 207);
+    height: 100%;
   }
 
   legend{
@@ -116,6 +142,7 @@ i {
 
   form {
     display: block;
+    height: 100%
   }
 
     button {

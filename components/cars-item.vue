@@ -42,6 +42,8 @@
 
 <script>
 import { mapState } from 'vuex';
+import { TweenMax, Bounce, Back } from 'gsap'
+
 
 export default {
   name: 'cars-item',
@@ -56,6 +58,10 @@ export default {
       'carsData',
     ])
   },
+  mounted(){
+
+  }
+
 };
 
 </script>
@@ -68,6 +74,11 @@ export default {
   margin-bottom: 20px;
   min-height: 320px;
   padding: 25px;
+
+  @media screen and(max-width: 767px){
+    flex-direction: column;
+    padding: 0;
+  }
 }
 
 
@@ -76,6 +87,10 @@ export default {
   flex-basis: 25%;
   display: flex;
   align-items: center;
+
+    @media screen and(max-width: 767px){
+    justify-content: center;
+  }
 }
 
 .image {
@@ -100,7 +115,11 @@ export default {
 
 h5 {
   padding: 8px 0;
-}
+
+      @media screen and(max-width: 767px){
+      text-align: center;
+      }
+    }
 }
 
 .item__price {
@@ -111,12 +130,23 @@ h5 {
   align-items: center;
   color: firebrick;
   padding: 10px;
+
+
+      @media screen and(max-width: 767px){
+      flex-basis: 40%;
+      }
+
 }
 
 .item__spec {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+
+    @media screen and(max-width: 767px){
+    padding-top: 20px;
+    }
+
 }
 
 h6 {
@@ -126,6 +156,11 @@ h6 {
 
 p {
   font-size: 1.2rem;
+
+    @media screen and(max-width: 767px){
+    padding-top: 10px;
+    text-align: center;
+    }
 }
 
 .button {

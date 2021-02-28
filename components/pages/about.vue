@@ -29,6 +29,11 @@
     &:nth-of-type(1) {
       padding-top: 20px;
     }
+
+         @media screen and(max-width: 1024px){
+          padding-left: 20px;
+          padding-right: 20px;
+        }
   }
 
 

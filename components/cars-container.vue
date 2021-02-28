@@ -1,11 +1,12 @@
 <template>
   <div class="container list__container">
-    <cars-item v-for="car in carsData" :key="car.id" :carSection="car"/>
+    <cars-item class="cars__item" v-for="car in carsData" :key="car.id" :carSection="car"/>
   </div>
 </template>
 
 <script>
 import { mapState } from 'vuex';
+
 
 export default {
       name: 'list',
@@ -19,6 +20,7 @@ export default {
       'carsData',
     ])
   },
+
 };
 </script>
 

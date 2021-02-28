@@ -1,5 +1,5 @@
 <template>
-  <nav class="nav">
+  <nav>
     <nuxt-link to="/"><div class="nav__logo">
       <img src="@/static/logo.png" alt="company logo">
     </div></nuxt-link>
@@ -22,11 +22,7 @@ export default {
 
 <style lang="scss" scoped>
 
-.nuxt-link-active {
-  color: red;
-}
-
-.nav {
+nav {
   position: fixed;
   width: 100%;
   z-index: 999;
@@ -36,19 +32,27 @@ export default {
   justify-content: space-between;
   align-items: center;
   background: rgb(221, 221, 221);
-  padding: 10px;
-  height: 80px;
+  padding: 10px 100px;
 
   .nav__links-wrapper {
     padding-right: 30px;
     flex-basis: 40%;
 
-      .nav__links {
+    @media screen and(max-width: 767px) {
+      padding: 0;
+      flex-basis: 100%;
+    }
+
+    .nav__links {
     display: flex;
     justify-content: space-between;
     list-style-type: none;
-    }
 
+        @media screen and(max-width: 767px) {
+          padding: 0;
+
+        }
+    }
   }
 
   .nav__link {
@@ -56,6 +60,10 @@ export default {
     color: #000;
     border-bottom: 1px solid transparent;
     padding: 5px;
+
+    @media screen and(max-width: 468px){
+        padding: 0;
+    }
 
     &:hover {
       border-bottom: 1px solid #24A7B9;

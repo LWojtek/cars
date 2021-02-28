@@ -82,6 +82,10 @@ export default {
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
+
+       @media screen and(max-width: 1024px){
+          flex-direction: column;
+        }
 }
 
 .picture__wrapper {
