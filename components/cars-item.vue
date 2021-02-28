@@ -1,7 +1,6 @@
 <template>
-
   <div>
-  <div class="list__item" v-if="carSection.id !== this.id">
+    <div class="list__item" v-if="carSection.id !== this.id">
       <div class="item__image">
         <nuxt-link :to="`/cars/${carSection.id}`">
           <img class="image" :src="`${ carSection.images.thumbnail[0] }`" alt="">
@@ -32,34 +31,39 @@
         </div>
       </div>
       <div class="item__price">
-        <h5>{{ carSection.price }}</h5>
+        <transition name="price">
+          <h5 v-if="price">{{ price }}</h5>
+        </transition>
           <nuxt-link :to="`/cars/${carSection.id}`"><button class="button">Details</button></nuxt-link>
       </div>
     </div>
   </div>
-
 </template>
 
 <script>
 import { mapState } from 'vuex';
-import { TweenMax, Bounce, Back } from 'gsap'
+
 
 
 export default {
   name: 'cars-item',
   data(){
     return {
-      id: this.$route.params.carId
-    }
+      id: this.$route.params.carId,
+      price: false
+          }
   },
-  props: ['carSection'],
+  props: ['carSection', 'delay'],
   computed: {
     ...mapState([
       'carsData',
-    ])
+    ]),
   },
   mounted(){
-
+    // this.price = this.carSection.price;
+    setTimeout(() => {
+        this.price = this.carSection.price;
+    }, this.delay);
   }
 
 };
