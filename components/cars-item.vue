@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="list__item" v-if="carSection.id !== this.id">
+    <div class="list__item" v-if="carSection && carSection.id">
       <div class="item__image">
         <nuxt-link :to="`/cars/${carSection.id}`">
           <img class="image" :src="`${ carSection.images.thumbnail[0] }`" alt="">
@@ -34,6 +34,7 @@
         <transition name="price">
           <h5 v-if="price">{{ price }}</h5>
         </transition>
+        <button class="btn__like"  @click="toggleLike(carSection.id)">{{isLiked ? 'Unlike' : 'Like'}}</button>
           <nuxt-link :to="`/cars/${carSection.id}`"><button class="button">Details</button></nuxt-link>
       </div>
     </div>
@@ -47,17 +48,29 @@ import { mapState } from 'vuex';
 
 export default {
   name: 'cars-item',
+  props: ['carSection', 'delay'],
   data(){
     return {
-      id: this.$route.params.carId,
-      price: false
-          }
+      price: false,
+    }
   },
-  props: ['carSection', 'delay'],
   computed: {
-    ...mapState([
-      'carsData',
-    ]),
+    isLiked(){
+      return this.likeList.indexOf(this.carSection.id) !== -1;
+    },
+    likeList(){
+       return this.$store.state.favorites;
+    }
+  },
+  methods: {
+    toggleLike(id){
+      console.log('asdf');
+      if(!this.isLiked){
+        this.$store.commit('addFavorite', id)
+      } else {
+        this.$store.commit('removeFavorite', id)
+      }
+    }
   },
   mounted(){
     // this.price = this.carSection.price;

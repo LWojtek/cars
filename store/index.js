@@ -1,13 +1,9 @@
 export const state = () => ({
   carsData: [],
+  favorites: [],
   page: 'index'
 })
 
-export const getters = {
-  getterValue: state => {
-    return state.value
-  }
-}
 
 export const mutations = {
   updateCarData: (state, data) => {
@@ -15,6 +11,16 @@ export const mutations = {
   },
   updatePage(state, pageName) {
     state.page = pageName;
+  },
+  addFavorite(state, carID) {
+    state.favorites.push(carID)
+    console.log('f');
+  },
+  removeFavorite(state, carID) {
+    var carIndex = state.favorites.indexOf(carID);
+    if (carIndex !== -1) {
+      state.favorites.splice(carIndex, 1)
+    }
   }
 }
 
