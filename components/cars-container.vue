@@ -1,8 +1,9 @@
 <template>
   <div class="container list__container">
-    <button @click="showFav = !showFav">toggle favs</button>
+    <!-- <button @click="showFav = !showFav">toggle favs</button> -->
     <transition-group name="item" tag="div">
-      <cars-item v-for="(car, i) in carsData" :key="car.id"
+      <cars-item v-for="(car, i) in carsData"
+        :key="car.id"
         :style="{'transition-delay': `${i * 250}ms`}"
         :carSection="car"
         :delay="(i * 250) + 500"
@@ -31,12 +32,16 @@ export default {
     },
     carsData(){
       if (this.showList) {
-        if(this.showFav){
-          return this.$store.state.carsData.filter((car) => {
-            return this.favorites.indexOf(car.id) !== -1;
-          });
-       } else {
-          return this.$store.state.carsData;
+        let storeCars = this.$store.state.carsData;
+        if (storeCars){
+          let carsData = storeCars.filter(car => car.id !== this.id)
+            if(this.showFav){
+              return carsData.filter((car) => {
+                return this.favorites.indexOf(car.id) !== -1;
+              });
+          } else {
+              return carsData;
+          }
         }
       }
       return false;

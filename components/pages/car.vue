@@ -29,7 +29,8 @@
     </div>
     <h3>Other cars</h3>
     <div>
-      <cars-container/>
+      <cars-container>
+      </cars-container>
     </div>
   </div>
 

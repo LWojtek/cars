@@ -9,6 +9,7 @@
         <nuxt-link to="/about" class="nav__link" ><li>About</li></nuxt-link>
         <nuxt-link to="/contact" class="nav__link" ><li>Contact</li></nuxt-link>
         <nuxt-link to="/cars" class="nav__link" ><li>Our cars</li></nuxt-link>
+        <nuxt-link to="/favorites" class="nav__link" ><li>Favorites</li></nuxt-link>
       </ul>
     </div>
   </nav>

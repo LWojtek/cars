@@ -62,8 +62,8 @@ h6 {
 .page-enter,
 .page-leave-to {
   opacity: 0;
-  transform: scale(0.3);
-  transform-origin: 50% 0%;
+  // transform: scale(0.3);
+  // transform-origin: 50% 0%;
 }
 
 
@@ -71,15 +71,15 @@ h6 {
 =                   Price                   =
 =============================================*/
 
-.price-enter-active,
-.price-leave-active {
-  transition: all 0.4s;
-}
-.price-enter,
-.price-leave-to {
-  opacity: 0;
-  transform: translateX(100%);
-}
+// .price-enter-active,
+// .price-leave-active {
+//   transition: all 0.4s;
+// }
+// .price-enter,
+// .price-leave-to {
+//   opacity: 0;
+//   transform: translateX(100%);
+// }
 
 /*=============================================
 =                   Price                   =

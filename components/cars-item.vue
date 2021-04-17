@@ -34,7 +34,7 @@
         <transition name="price">
           <h5 v-if="price">{{ price }}</h5>
         </transition>
-        <button class="btn__like"  @click="toggleLike(carSection.id)">{{isLiked ? 'Unlike' : 'Like'}}</button>
+                <i class="btn__like fas fa-star fa-4x" :class="[isLiked ? 'liked' : 'unliked']" @click="toggleLike(carSection.id)"></i>
           <nuxt-link :to="`/cars/${carSection.id}`"><button class="button">Details</button></nuxt-link>
       </div>
     </div>
@@ -193,6 +193,39 @@ p {
 
   &:hover {
        background: rgb(85,85,85)
+  }
+}
+
+.unliked {
+  color: black;
+  opacity: .3;
+  animation: bounce-out .2s ease-in forwards;
+}
+.liked {
+  color: gold;
+  animation: bounce-in .2s ease-in forwards;
+}
+
+@keyframes bounce-in {
+  0% {
+    transform: scale(1)
+  }
+  50% {
+    transform: scale(1.7)
+  }
+  100% {
+    transform: scale(1.2)
+  }
+}
+@keyframes bounce-out {
+  0% {
+    transform: scale(1.2)
+  }
+  50% {
+    transform: scale(1.7)
+  }
+  100% {
+    transform: scale(1)
   }
 }
 

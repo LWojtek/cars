@@ -80,6 +80,11 @@ export default {
           component: '@/components/pages/car.vue'
         },
         {
+          name: 'favorites',
+          path: '/favorites',
+          component: '@/components/pages/favorites.vue'
+        },
+        {
           name: '404',
           path: '/404',
           component: '@/components/pages/index.vue'
